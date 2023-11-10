@@ -1,0 +1,44 @@
+-Instalar el SDK installer en el directorio /home/heutlett/yocto/poky-dunfell-23.0.2/emuRaspberry/tmp/deploy/sdk mediante el comando:
+
+	./poky-glibc-x86_64-core-image-minimal-cortexa7t2hf-neon-vfpv4-raspberrypi2-toolchain-3.1.2.sh 
+
+-Cargar variables de entorno del sistema en la raiz del directorio de la biblioteca:
+	
+	source /opt/poky/3.1.2/environment-setup-cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi 
+
+-Comprobar que se cargaron las variables de entorno:
+
+	echo $CC
+
+	Se debe ver asi:
+
+		arm-poky-linux-gnueabi-gcc -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi
+
+-Crear un directorio /build en la raiz de la biblioteca
+
+-Crear un directorio /build en la raiz de la biblioteca
+
+-Ingresar a /build y ejecutar:
+	(Se deberia comprobar en el archivo /opt/poky/3.1.2/environment-setup-cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi cual es la version de gnuabi que utiliza)
+
+	../configure --prefix=/home/heutlett/libmygpio/usr/ --host=arm-poky-linux-gnueabi
+
+-Ahora ejecutar el makefile:
+	
+-Usar paralelismo:
+
+	-Ver cores:
+
+		-cat /proc/cpuinfo | grep cores
+
+	- Ejecutar make con n procesadores:
+
+		make -j<n>
+
+-Ejecutar "make install" en build
+
+-Para generar el .tar.gz ejecutar el comando sudo make distcheck en el directorio build.
+
+	
+
+	
