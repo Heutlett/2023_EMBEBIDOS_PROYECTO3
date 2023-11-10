@@ -1,0 +1,67 @@
+-Crear nueva capa:
+
+	bitbake-layers create-layer ~/nueva-capa
+
+-Agregar la capa:
+
+	bitbake-layers add-layer ~/nueva-capa
+
+-Remover capa:
+
+	bitbake-layers remove-layer ~/nueva-capa
+
+-Buildear una receta:
+
+	bitbake nombre_receta
+
+-Crear imagen minima para raspberry
+
+	bitbake rpi-basic-image
+
+-Quemar la imagen en usb:
+
+	sudo dd if=rpi-basic-image-raspberrypi2.rpi-sdimg of=/dev/sdb
+
+
+
+-----------------------------------------------------------------------------------
+
+-Agregar biblioteca dinamica:
+
+	- Crear una nueva carpeta de recipes-nombre para la biblioteca en alguna capa o crear la capa
+
+	- Dentro de la carpeta recipes-nombre crear otra carpeta con el nombre-receta
+
+	- Dentro de la carpeta de la receta crear un directorio "files" y agregar el .tar de la bilbioteca cumpliendo con el nombre estandar: nombre-version.tar.gz
+
+	- Tambien dentro de la carpeta receta crear un archivo .bb cumpliendo el formato nombre_version.bb
+
+	- Dentro de este archivo configurarlo de la siguiente manera:
+		(Tomar en cuenta que el .tar.gz debe contener el archivo COPYING de la licencia)
+
+SUMMARY = "GPIO library for rpi2"
+DESCRIPTION = "GPIO library for rpi2"
+
+SECTION = "libs"
+
+LICENSE = "GPLv2"
+LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
+
+SRC_URI = "file://libmygpio-1.0.tar.gz"
+
+S = "${WORKDIR}/${PN}-${PV}"
+
+EXTRA_OECONF += "--enable-shared"
+
+inherit autotools
+
+PROVIDES += "${PN}-staticdev"
+
+FILES_${PN} = "${libdir}/*.so* ${bindir}/*"
+FILES_${PN}-staticdev = "${includedir} ${datadir}"
+
+	- Luego modificar el archivo conf/local.conf agregando lo siguiente al final:
+
+IMAGE_INSTALL_append =" libmygpio libmygpio-staticdev"
+
+
