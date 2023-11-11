@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "775f42b6-6052-4558-ba3a-7fc5c9907889",
+		"name": "Proyecto 1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11914502"
+	},
+	"item": [
+		{
+			"name": "Door State",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"door\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.42.0.88:5000/home/get_door_state",
+					"protocol": "http",
+					"host": [
+						"10",
+						"42",
+						"0",
+						"88"
+					],
+					"port": "5000",
+					"path": [
+						"home",
+						"get_door_state"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Take photo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://10.42.0.88:5000/home/take_photo",
+					"protocol": "http",
+					"host": [
+						"10",
+						"42",
+						"0",
+						"88"
+					],
+					"port": "5000",
+					"path": [
+						"home",
+						"take_photo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change light state",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"room\": \"living-room\",\n    \"state\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.42.0.88:5000/home/change_light_state",
+					"protocol": "http",
+					"host": [
+						"10",
+						"42",
+						"0",
+						"88"
+					],
+					"port": "5000",
+					"path": [
+						"home",
+						"change_light_state"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get light state",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"room\":\"bedroom1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.42.0.88:5000/home/get_light_state",
+					"protocol": "http",
+					"host": [
+						"10",
+						"42",
+						"0",
+						"88"
+					],
+					"port": "5000",
+					"path": [
+						"home",
+						"get_light_state"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"juanignava\",\n    \"password\":\"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.42.0.88:5000/login",
+					"protocol": "http",
+					"host": [
+						"10",
+						"42",
+						"0",
+						"88"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Juan Ignacio Navarro\",\n    \"username\": \"juanignava\",\n    \"email\": \"ju.navarro@estudiantec.cr\",\n    \"password\": \"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.42.0.88:5000/sign_up",
+					"protocol": "http",
+					"host": [
+						"10",
+						"42",
+						"0",
+						"88"
+					],
+					"port": "5000",
+					"path": [
+						"sign_up"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
