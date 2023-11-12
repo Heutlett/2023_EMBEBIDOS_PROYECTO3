@@ -392,6 +392,7 @@ config.status:1086: creating Makefile
 config.status:1086: creating lib/Makefile
 config.status:1086: creating src/Makefile
 config.status:1086: creating config.h
+config.status:1252: config.h is unchanged
 config.status:1300: executing depfiles commands
 config.status:1300: executing libtool commands
 

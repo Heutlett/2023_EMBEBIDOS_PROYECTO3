@@ -56,7 +56,13 @@
 	
 	../configure --prefix=/home/heutlett/2023_EMBEBIDOS_PROYECTO3/libfilter/build/usr
 
-7. Generar .tar.gz:
+7- Ejecutar make:
+	
+	make
+	
+	make install
+
+8- Generar .tar.gz:
 
 	make distcheck
 

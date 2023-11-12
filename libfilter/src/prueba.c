@@ -2,6 +2,6 @@
 #include <stdio.h>
 
 int main(){
-    uint8_t img = 'a';
-    apply_filter_1(img,100,100);
+    printf("probando filtros");
+    return 0;
 }

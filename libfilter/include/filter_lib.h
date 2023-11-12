@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-void apply_filter_1(uint8_t *image_data, int width, int height);
+void apply_filter_1(unsigned char *image, int width, int height);
 void apply_filter_2(uint8_t *image_data, int width, int height);
 void apply_filter_3(uint8_t *image_data, int width, int height);
 
