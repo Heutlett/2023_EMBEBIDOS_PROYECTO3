@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "filter_lib.h": "c"
+        "filter_lib.h": "c",
+        "time.h": "c"
     }
 }

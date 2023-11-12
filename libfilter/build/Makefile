@@ -86,7 +86,7 @@ NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = x86_64-pc-linux-gnu
-host_triplet = x86_64-pc-linux-gnu
+host_triplet = arm-poky-linux-gnueabi
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/libtool.m4 \
@@ -166,10 +166,10 @@ am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in \
 	$(top_srcdir)/build-aux/config.sub \
 	$(top_srcdir)/build-aux/install-sh \
 	$(top_srcdir)/build-aux/ltmain.sh \
-	$(top_srcdir)/build-aux/missing README build-aux/ar-lib \
-	build-aux/compile build-aux/config.guess build-aux/config.sub \
-	build-aux/depcomp build-aux/install-sh build-aux/ltmain.sh \
-	build-aux/missing
+	$(top_srcdir)/build-aux/missing COPYING README \
+	build-aux/ar-lib build-aux/compile build-aux/config.guess \
+	build-aux/config.sub build-aux/depcomp build-aux/install-sh \
+	build-aux/ltmain.sh build-aux/missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -230,7 +230,7 @@ DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
 DLLTOOL = false
 DSYMUTIL = 
-DUMPBIN = 
+DUMPBIN = :
 ECHO_C = 
 ECHO_N = -n
 ECHO_T = 
@@ -243,7 +243,7 @@ INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-LD = /usr/bin/ld -m elf_x86_64 -m elf_x86_64
+LD = /usr/bin/ld
 LDFLAGS = 
 LIBOBJS = 
 LIBS = 
@@ -255,7 +255,7 @@ LT_SYS_LIBRARY_PATH =
 MAKEINFO = ${SHELL} /home/heutlett/2023_EMBEBIDOS_PROYECTO3/libfilter/build-aux/missing makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /bin/mkdir -p
-NM = /usr/bin/nm -B
+NM = nm
 NMEDIT = 
 OBJDUMP = objdump
 OBJEXT = o
@@ -270,7 +270,7 @@ PACKAGE_URL =
 PACKAGE_VERSION = 1.0
 PATH_SEPARATOR = :
 RANLIB = ranlib
-SED = sed
+SED = /bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
 STRIP = strip
@@ -279,9 +279,9 @@ abs_builddir = /home/heutlett/2023_EMBEBIDOS_PROYECTO3/libfilter/build
 abs_srcdir = /home/heutlett/2023_EMBEBIDOS_PROYECTO3/libfilter/build/..
 abs_top_builddir = /home/heutlett/2023_EMBEBIDOS_PROYECTO3/libfilter/build
 abs_top_srcdir = /home/heutlett/2023_EMBEBIDOS_PROYECTO3/libfilter/build/..
-ac_ct_AR = 
+ac_ct_AR = ar
 ac_ct_CC = gcc
-ac_ct_DUMPBIN = 
+ac_ct_DUMPBIN = link -dump
 am__include = include
 am__leading_dot = .
 am__quote = 
@@ -299,11 +299,11 @@ datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = x86_64-pc-linux-gnu
-host_alias = 
-host_cpu = x86_64
-host_os = linux-gnu
-host_vendor = pc
+host = arm-poky-linux-gnueabi
+host_alias = arm-poky-linux-gnueabi
+host_cpu = arm
+host_os = linux-gnueabi
+host_vendor = poky
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info

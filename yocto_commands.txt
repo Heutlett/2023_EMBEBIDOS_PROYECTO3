@@ -64,4 +64,8 @@ FILES_${PN}-staticdev = "${includedir} ${datadir}"
 
 IMAGE_INSTALL_append =" libmygpio libmygpio-staticdev"
 
+------------------------------------------------------------------
 
+- Probar la biblioteca
+
+	bitbake libmygpio
