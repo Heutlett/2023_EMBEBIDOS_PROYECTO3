@@ -1,6 +1,11 @@
--Instalar el SDK installer en el directorio /home/heutlett/yocto/poky-dunfell-23.0.2/emuRaspberry/tmp/deploy/sdk mediante el comando:
+- Crear el toolchain con el siguiente comando:
 
-	./poky-glibc-x86_64-core-image-minimal-cortexa7t2hf-neon-vfpv4-raspberrypi2-toolchain-3.1.2.sh 
+	bitbake rpi-basic-image -c populate_sdk
+
+-Instalar el SDK installer en el directorio /home/heutlett/yocto/poky-dunfell-23.0.2/emuRaspberry/tmp/deploy/sdk mediante el comando:
+	
+	cd tmp/deploy/sdk/
+	./poky-glibc-x86_64-rpi-basic-image-cortexa7t2hf-neon-vfpv4-raspberrypi2-toolchain-3.1.2.sh
 
 -Cargar variables de entorno del sistema en la raiz del directorio de la biblioteca:
 	
