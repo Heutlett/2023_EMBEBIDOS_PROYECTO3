@@ -1,24 +1,26 @@
-#include "filter_lib.h"
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
+
+#define STB_IMAGE_WRITE_IMPLEMENTATION
+#include "stb_image_write.h"
+
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <omp.h>
 #include <math.h>
 
-// Filtro grey scale
+// Filtro sobel
 void apply_filter_1(uint8_t *image_data, int width, int height) {
     #pragma omp parallel for collapse(2)
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
             int index = (y * width + x) * 3;
-            uint8_t red = image_data[index];
-            uint8_t green = image_data[index + 1];
-            uint8_t blue = image_data[index + 2];
-
-            // Calcula la escala de grises promediando los componentes RGB
-            uint8_t gray = (uint8_t)((red + green + blue) / 3);
-
-            // Establece el mismo valor para los componentes RGB para obtener escala de grises
-            image_data[index] = gray;
-            image_data[index + 1] = gray;
-            image_data[index + 2] = gray;
+            uint8_t r = image_data[index];
+            uint8_t g = image_data[index + 1];
+            uint8_t b = image_data[index + 2];
+            uint8_t gray = (uint8_t)(0.299 * r + 0.587 * g + 0.114 * b);
+            image_data[index] = image_data[index + 1] = image_data[index + 2] = gray;
         }
     }
 }
@@ -87,4 +89,48 @@ void apply_filter_3(uint8_t *image_data, int width, int height) {
             image_data[index + 2] = laplacian / 9;
         }
     }
+}
+
+void apply_filter(char *input_path, char *output_path, int filter){
+
+    printf("Comenzando proceso de filtrado\n\n");
+    printf("Filtro seleccionado %d\n\n", filter);
+
+    int width, height, channels;
+    uint8_t *image = stbi_load(input_path, &width, &height, &channels, 0);
+
+    if (image == NULL) {
+        fprintf(stderr, "Error al cargar la imagen.\n");
+    }
+
+    // Aplicar el filtro de escala de grises
+    switch (filter)
+    {
+    case 1:
+        printf("Aplicando filtro greyscale\n\n");
+        apply_filter_1(image,width, height);
+        break;
+
+    case 2:
+        printf("Aplicando filtro sobel\n\n");
+        apply_filter_2(image, width, height);
+        break;
+    case 3:
+        printf("Aplicando filtro laplaciano\n\n");
+        apply_filter_3(image, width, height);
+        break;
+    
+    default:
+        break;
+    }
+    
+
+    // Guardar la imagen resultante
+    if (!stbi_write_jpg(output_path, width, height, channels, image, 100)) {
+        fprintf(stderr, "Error al guardar la imagen.\n");
+    }
+
+    stbi_image_free(image);
+
+    printf("Proceso completado. Imagen guardada en %s\n", output_path);
 }

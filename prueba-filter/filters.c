@@ -10,15 +10,15 @@
 #include "stb_image_write.h"
 
 // Filtro sobel
-void apply_filter_1(uint8_t *image, int width, int height) {
+void apply_filter_1(char *image, int width, int height) {
     #pragma omp parallel for collapse(2)
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
             int index = (y * width + x) * 3;
-            uint8_t r = image[index];
-            uint8_t g = image[index + 1];
-            uint8_t b = image[index + 2];
-            uint8_t gray = (uint8_t)(0.299 * r + 0.587 * g + 0.114 * b);
+            char r = image[index];
+            char g = image[index + 1];
+            char b = image[index + 2];
+            char gray = (char)(0.299 * r + 0.587 * g + 0.114 * b);
             image[index] = image[index + 1] = image[index + 2] = gray;
         }
     }
@@ -137,7 +137,7 @@ int main(int argc, char *argv[]) {
 
     char *input_path = argv[1];
     char *output_path = argv[2];
-    int filter = atoi(argv[3]);
+    int filter = atoi(argv[1]);
 
     apply_filter(input_path, output_path, filter);
 
