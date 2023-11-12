@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "filter_lib.h": "c",
-        "time.h": "c"
+        "time.h": "c",
+        "stb_image_write.h": "c",
+        "stdint.h": "c"
     }
 }

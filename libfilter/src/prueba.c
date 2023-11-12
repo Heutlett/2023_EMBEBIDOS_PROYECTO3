@@ -12,6 +12,8 @@ int main(int argc, char *argv[]) {
     int filter = atoi(argv[3]);
     int use_omp = atoi(argv[4]);
 
+    take_photo_gst(input_path);
+
     double time_elapsed = apply_filter(input_path, output_path, filter, use_omp);
 
     printf("Time elapsed: %f\n\n", time_elapsed);
