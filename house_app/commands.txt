@@ -1,0 +1,5 @@
+build apk:
+    flutter build apk --release
+
+build local para usar sin debug:
+    flutter run --release --no-resident --hot
