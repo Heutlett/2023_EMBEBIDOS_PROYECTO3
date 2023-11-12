@@ -16,4 +16,4 @@ def apply_filter(input_path: str, output_path: str, filter: int, use_omp: int) -
     _apply_filter.restype = c_float
     
 
-    return _apply_filter(c_char_p(input_path), c_char_p(output_path), c_int(filter), c_int(use_omp))
+    return _apply_filter(c_char_p(input_path.encode('utf-8')), c_char_p(output_path.encode('utf-8')), c_int(filter), c_int(use_omp))

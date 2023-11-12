@@ -220,7 +220,7 @@ void take_photo_gst(char *output_path){
 
 }
 
-double apply_filter(char *input_path, char *output_path, int filter, int use_omp){
+float apply_filter(char *input_path, char *output_path, int filter, int use_omp){
 
     printf("Comenzando proceso de filtrado\n\n");
     printf("Filtro seleccionado %d\n\n", filter);
