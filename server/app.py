@@ -61,6 +61,42 @@ def take_photo():
 
     return send_file(img_path)
 
+@app.route('/home/apply_filter', methods=['GET'])
+def apply_filter():
+    """
+    This function is used to get a filter selected.
+    """
+    # Generic response
+    response = {
+        'error': False,
+        'data': None,
+        'msg': None
+    }
+    
+    filter = 1
+    input_img_path = '/filter-workspace/fswebcam.jpg'
+    output_img_path = '/filter-workspace/output_fswebcam.jpg'
+    time_elapsed_no_omp = filters.apply_filter(input_path=input_img_path, output_path=output_img_path, filter=filter, use_omp=0)
+    time_elapsed_omp = filters.apply_filter(input_path=input_img_path, output_path=output_img_path, filter=filter, use_omp=1)
+    print('time_elapsed_no_omp: ', time_elapsed_no_omp)
+    print('time_elapsed_omp: ', time_elapsed_omp)
+    print('boosted for: ', time_elapsed_no_omp-time_elapsed_omp)
+    
+    response['data'] = {
+        'time_elapsed_no_omp': time_elapsed_no_omp,
+        'time_elapsed_omp': time_elapsed_omp
+    }
+
+    return jsonify(response)
+    
+@app.route('/home/get_filtered_image', methods=['GET'])
+def get_filtered_image():
+    """
+    This function is used to take a photo of a filter.
+    """
+    img_path = '/filter-workspace/output_fswebcam.jpg'
+
+    return send_file(img_path)
 
 if __name__ == '__main__':
     filters.start()

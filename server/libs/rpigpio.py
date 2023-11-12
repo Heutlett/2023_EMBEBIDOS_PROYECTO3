@@ -2,7 +2,7 @@ from ctypes import *
 
 from config import constants
 
-rpigpio_lib = CDLL(constants.SRC_LIB)
+rpigpio_lib = CDLL(constants.GPIO_SRC_LIB)
 
 # void gpio_rpi_init_ptrs(void);
 def gpio_rpi_init_ptrs() -> None:

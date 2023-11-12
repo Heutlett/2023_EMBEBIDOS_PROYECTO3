@@ -1,4 +1,5 @@
 from libs.rpigpio import *
+from libs.rpifilter import *
 from config import constants
 
 def start() -> None:
@@ -33,3 +34,9 @@ def get_state(filter: str) -> int:
         print('Filter Error: {filter} in pin {pin} is not available.')
     
     return result
+
+def filter_image(input_path: str, output_path: str, filter: int, use_omp: int):
+    
+    return apply_filter(input_path=input_path, output_path=output_path, filter=filter, use_omp=use_omp)
+    
+    

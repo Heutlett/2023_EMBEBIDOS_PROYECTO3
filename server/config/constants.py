@@ -1,6 +1,6 @@
 # Dynamic library path
-SRC_LIB: str = '../usr/lib/libmygpio.so.0'
-
+GPIO_SRC_LIB: str = '../usr/lib/libmygpio.so.0'
+FILTER_SRC_LIB: str = '../usr/lib/libfilter.so.0'
 
 # When writing out one logic voltage
 HIGH: int = 1
