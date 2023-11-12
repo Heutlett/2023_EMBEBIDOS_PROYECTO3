@@ -52,7 +52,7 @@
 
 	autoreconf --install
 
-6- Ejecutar comando para ejecutar autotools:
+6- Acceder a build y ejecutar comando para ejecutar autotools:
 	
 	../configure --prefix=/home/heutlett/2023_EMBEBIDOS_PROYECTO3/libfilter/build/usr
 

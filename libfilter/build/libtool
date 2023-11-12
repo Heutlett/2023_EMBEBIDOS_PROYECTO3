@@ -75,7 +75,7 @@ build=x86_64-pc-linux-gnu
 build_os=linux-gnu
 
 # A sed program that does not truncate output.
-SED="/bin/sed"
+SED="sed"
 
 # Sed that helps us avoid accidentally triggering echo(1) options like -n.
 Xsed="$SED -e 1s/^X//"
@@ -304,7 +304,7 @@ striplib="strip --strip-unneeded"
 
 
 # The linker used to build libraries.
-LD="/usr/bin/ld -m elf_x86_64"
+LD="/usr/bin/ld -m elf_x86_64 -m elf_x86_64"
 
 # How to create reloadable object files.
 reload_flag=" -r"

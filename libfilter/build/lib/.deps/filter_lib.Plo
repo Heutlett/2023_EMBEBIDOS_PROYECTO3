@@ -1,5 +1,5 @@
 filter_lib.lo: ../../lib/filter_lib.c /usr/include/stdc-predef.h \
- ../../lib/stb_image.h /usr/include/stdio.h \
+ ../../include/stb_image.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -75,12 +75,12 @@ filter_lib.lo: ../../lib/filter_lib.c /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-linux-gnu/7/include/xmmintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/7/include/mmintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/7/include/mm_malloc.h \
- ../../lib/stb_image_write.h \
+ ../../include/stb_image_write.h \
  /usr/lib/gcc/x86_64-linux-gnu/7/include/omp.h
 
 /usr/include/stdc-predef.h:
 
-../../lib/stb_image.h:
+../../include/stb_image.h:
 
 /usr/include/stdio.h:
 
@@ -250,6 +250,6 @@ filter_lib.lo: ../../lib/filter_lib.c /usr/include/stdc-predef.h \
 
 /usr/lib/gcc/x86_64-linux-gnu/7/include/mm_malloc.h:
 
-../../lib/stb_image_write.h:
+../../include/stb_image_write.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/7/include/omp.h:
