@@ -1,0 +1,6 @@
+-Copiar servidor a la raiz del file system de la rpi2:
+	(Se debe buscar la ruta del file system, se puede con el comando df -h o revisar el programa disks)
+
+	sudo cp -r ./server /media/heutlett/ff972eeb-2318-40e1-80cb-fd54f2c4610f
+
+	Al iniciar la rpi2, el servidor estara en la raiz junto a los directorios usr/ etc/ y otros.

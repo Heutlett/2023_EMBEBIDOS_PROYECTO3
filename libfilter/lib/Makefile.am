@@ -1,0 +1,4 @@
+lib_LTLIBRARIES = libfilter.la
+include_HEADERS = $(top_srcdir)/include/filter_lib.h
+AM_CPPFLAGS = -I$(top_srcdir)/include
+libfilter_la_SOURCES = filter_lib.c

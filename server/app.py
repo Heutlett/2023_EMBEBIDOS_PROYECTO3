@@ -12,7 +12,6 @@ from controllers import filters
 
 # Creating an basic app
 app = Flask(__name__)
-app.config['DEBUG'] = True
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 

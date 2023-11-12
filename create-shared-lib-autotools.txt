@@ -1,0 +1,66 @@
+1-Crear los directorios:
+	
+	- include/
+			Contiene los encabezados .h
+
+	- lib/
+			Contiene la implementacion de las funciones de los encabezados .h
+
+	- src/
+			Contiene los programas que utilizan los .h
+
+2- Crear el archivo configure.ac en el root de la biblioteca y agregar lo siguiente:
+
+	AC_INIT([libfilter], [1.0], [adrian.araya.420@gmail.com])
+	AC_CONFIG_AUX_DIR([build-aux])
+	AC_CONFIG_MACRO_DIR([m4])
+	AM_INIT_AUTOMAKE([foreign -Wall -Werror])
+	AC_PROG_CC
+	AM_PROG_AR
+	LT_INIT
+	AC_CONFIG_HEADERS([config.h])
+	AC_CONFIG_FILES([Makefile lib/Makefile src/Makefile])
+	AC_OUTPUT
+
+3- Crear los makefiles:
+
+	- Makefile.am (raiz)
+
+		SUBDIRS = lib src
+		ACLOCAL_AMFLAGS = -I m4
+
+	- src/Makefile.am
+
+		AM_CPPFLAGS = -I$(top_srcdir)/include
+		bin_PROGRAMS = filter_prueba
+		filter_prueba_SOURCES = prueba.c
+		filter_prueba_LDADD = $(top_builddir)/lib/libfilter.la -lm
+
+	- lib/Makefile.am
+
+		lib_LTLIBRARIES = libfilter.la
+		include_HEADERS = $(top_srcdir)/include/filter_lib.h
+		AM_CPPFLAGS = -I$(top_srcdir)/include
+		libfilter_la_SOURCES = filter_lib.c
+
+4- Crear los directorios para el build:
+	
+	- Crear directorio build/
+	- Dentro de build crear directorio usr/
+
+5- Ejecutar comando de configuracion de autotools en la raiz de la biblioteca:
+
+	autoreconf --install
+
+6- Ejecutar comando para ejecutar autotools:
+	
+	../configure --prefix=/home/heutlett/2023_EMBEBIDOS_PROYECTO3/libfilter/build/usr
+
+7. Generar .tar.gz:
+
+	make distcheck
+
+
+NOTA IMPORTANTE: esto no hace compilacion cruzada, esto compila para el computador origen, para hacer compilacion cruzada leer documento "cross-compile-commands.txt"
+
+	
