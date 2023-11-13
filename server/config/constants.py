@@ -1,6 +1,11 @@
 # Dynamic library path
 GPIO_SRC_LIB: str = '../usr/lib/libmygpio.so.0'
 FILTER_SRC_LIB: str = '../usr/lib/libfilter.so.0'
+GPIOMANSRC_LIB: str = '../usr/lib/libgpioman.so.0'
+
+# Output image files
+INPUT_IMG_PATH = '/filter-workspace/input.jpg'
+OUTPUT_IMG_PATH = '/filter-workspace/output.jpg'
 
 # When writing out one logic voltage
 HIGH: int = 1
@@ -23,8 +28,8 @@ SUCCESS: int = 0
 # Pins values
 PINS: dict = {
     'filters': {
-        'filter1': 23,
-        'filter2': 24,
-        'filter3': 20
+        'filter1': 17,
+        'filter2': 27,
+        'filter3': 22,
     }
 }

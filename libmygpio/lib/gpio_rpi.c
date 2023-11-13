@@ -124,7 +124,7 @@ void gpio_rpi_read_all(void)
 
   for (int i = 0; i < 10; ++i)
   {
-    printf("Pin %d is set to %d\n", i, (bits >> i) & 0x1);
+    printf("Pin %d value is %d\n", i, (bits >> i) & 0x1);
   }
 }
 
@@ -134,7 +134,7 @@ int gpio_rpi_read(int pin)
   bits >>= pin;
   bits &= 0x1;
 
-  printf("Pin %d set to %d\n", pin, bits);
+  printf("Pin %d value is %d\n", pin, bits);
   return (int)bits;
 }
 

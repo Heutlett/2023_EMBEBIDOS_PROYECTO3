@@ -37,6 +37,7 @@ PATH: /opt/poky/3.1.2/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-musl
 PATH: /home/heutlett/.linuxbrew/bin
 PATH: /home/heutlett/.linuxbrew/sbin
 PATH: /home/heutlett/.cargo/bin
+PATH: /home/heutlett/.local/bin
 PATH: /usr/local/sbin
 PATH: /usr/local/bin
 PATH: /usr/sbin
@@ -58,7 +59,7 @@ PATH: /home/heutlett/toolchains/arm-gnu-toolchain-12.3.rel1-x86_64-arm-none-eabi
 ## Core tests. ##
 ## ----------- ##
 
-configure:2037: loading site script /opt/poky/3.1.2/site-config-cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi
+configure:1986: loading site script /opt/poky/3.1.2/site-config-cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi
 | ac_cv_c_littleendian=${ac_cv_c_littleendian=yes}
 | ac_cv_c_bigendian=${ac_cv_c_bigendian=no}
 | 
@@ -610,32 +611,32 @@ configure:2037: loading site script /opt/poky/3.1.2/site-config-cortexa7t2hf-neo
 | ac_cv_buggy_getaddrinfo=no
 | 
 | ac_cv_path_SED=${ac_cv_path_SED=sed}
-configure:2179: checking for a BSD-compatible install
-configure:2247: result: /usr/bin/install -c
-configure:2258: checking whether build environment is sane
-configure:2313: result: yes
-configure:2372: checking for arm-poky-linux-gnueabi-strip
-configure:2399: result: arm-poky-linux-gnueabi-strip
-configure:2464: checking for a thread-safe mkdir -p
-configure:2503: result: /bin/mkdir -p
-configure:2510: checking for gawk
-configure:2526: found /usr/bin/gawk
-configure:2537: result: gawk
-configure:2548: checking whether make sets $(MAKE)
-configure:2570: result: yes
-configure:2599: checking whether make supports nested variables
-configure:2616: result: yes
-configure:2750: checking for arm-poky-linux-gnueabi-gcc
-configure:2777: result: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi
-configure:3046: checking for C compiler version
-configure:3055: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi --version >&5
+configure:2128: checking for a BSD-compatible install
+configure:2196: result: /usr/bin/install -c
+configure:2207: checking whether build environment is sane
+configure:2222: result: yes
+configure:2272: checking for arm-poky-linux-gnueabi-strip
+configure:2299: result: arm-poky-linux-gnueabi-strip
+configure:2364: checking for a thread-safe mkdir -p
+configure:2403: result: /bin/mkdir -p
+configure:2410: checking for gawk
+configure:2426: found /usr/bin/gawk
+configure:2437: result: gawk
+configure:2448: checking whether make sets $(MAKE)
+configure:2470: result: yes
+configure:2499: checking whether make supports nested variables
+configure:2516: result: yes
+configure:2650: checking for arm-poky-linux-gnueabi-gcc
+configure:2677: result: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi
+configure:2946: checking for C compiler version
+configure:2955: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi --version >&5
 arm-poky-linux-gnueabi-gcc (GCC) 9.3.0
 Copyright (C) 2019 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-configure:3066: $? = 0
-configure:3055: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -v >&5
+configure:2966: $? = 0
+configure:2955: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -v >&5
 Using built-in specs.
 COLLECT_GCC=arm-poky-linux-gnueabi-gcc
 COLLECT_LTO_WRAPPER=/opt/poky/3.1.2/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-poky-linux-gnueabi/gcc/arm-poky-linux-gnueabi/9.3.0/lto-wrapper
@@ -643,158 +644,161 @@ Target: arm-poky-linux-gnueabi
 Configured with: ../../../../../../work-shared/gcc-9.3.0-r0/gcc-9.3.0/configure --build=x86_64-linux --host=x86_64-pokysdk-linux --target=arm-poky-linux-gnueabi --prefix=/opt/poky/3.1.2/sysroots/x86_64-pokysdk-linux/usr --exec_prefix=/opt/poky/3.1.2/sysroots/x86_64-pokysdk-linux/usr --bindir=/opt/poky/3.1.2/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi --sbindir=/opt/poky/3.1.2/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi --libexecdir=/opt/poky/3.1.2/sysroots/x86_64-pokysdk-linux/usr/libexec/arm-poky-linux-gnueabi --datadir=/opt/poky/3.1.2/sysroots/x86_64-pokysdk-linux/usr/share --sysconfdir=/opt/poky/3.1.2/sysroots/x86_64-pokysdk-linux/etc --sharedstatedir=/opt/poky/3.1.2/sysroots/x86_64-pokysdk-linux/com --localstatedir=/opt/poky/3.1.2/sysroots/x86_64-pokysdk-linux/var --libdir=/opt/poky/3.1.2/sysroots/x86_64-pokysdk-linux/usr/lib/arm-poky-linux-gnueabi --includedir=/opt/poky/3.1.2/sysroots/x86_64-pokysdk-linux/usr/include --oldincludedir=/opt/poky/3.1.2/sysroots/x86_64-pokysdk-linux/usr/include --infodir=/opt/poky/3.1.2/sysroots/x86_64-pokysdk-linux/usr/share/info --mandir=/opt/poky/3.1.2/sysroots/x86_64-pokysdk-linux/usr/share/man --disable-silent-rules --disable-dependency-tracking --with-libtool-sysroot=/home/heutlett/yocto/poky-dunfell-23.0.2/emuRaspberry/tmp/work/x86_64-nativesdk-pokysdk-linux/gcc-cross-canadian-arm/9.3.0-r0/recipe-sysroot --with-gnu-ld --enable-shared --enable-languages=c,c++ --enable-threads=posix --enable-multilib --enable-default-pie --enable-c99 --enable-long-long --enable-symvers=gnu --enable-libstdcxx-pch --program-prefix=arm-poky-linux-gnueabi- --without-local-prefix --disable-install-libiberty --enable-lto --disable-libssp --enable-libitm --disable-bootstrap --disable-libmudflap --with-system-zlib --with-linker-hash-style=gnu --enable-linker-build-id --with-ppl=no --with-cloog=no --enable-checking=release --enable-cheaders=c_global --without-isl --with-gxx-include-dir=/not/exist/usr/include/c++/9.3.0 --with-build-time-tools=/home/heutlett/yocto/poky-dunfell-23.0.2/emuRaspberry/tmp/work/x86_64-nativesdk-pokysdk-linux/gcc-cross-canadian-arm/9.3.0-r0/recipe-sysroot-native/usr/arm-poky-linux-gnueabi/bin --with-sysroot=/not/exist --with-build-sysroot=/home/heutlett/yocto/poky-dunfell-23.0.2/emuRaspberry/tmp/work/x86_64-nativesdk-pokysdk-linux/gcc-cross-canadian-arm/9.3.0-r0/recipe-sysroot --enable-poison-system-directories --disable-static --enable-nls --with-glibc-version=2.28 --enable-initfini-array
 Thread model: posix
 gcc version 9.3.0 (GCC) 
-configure:3066: $? = 0
-configure:3055: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -V >&5
+configure:2966: $? = 0
+configure:2955: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -V >&5
 arm-poky-linux-gnueabi-gcc: error: unrecognized command line option '-V'
 arm-poky-linux-gnueabi-gcc: fatal error: no input files
 compilation terminated.
-configure:3066: $? = 1
-configure:3055: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -qversion >&5
+configure:2966: $? = 1
+configure:2955: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -qversion >&5
 arm-poky-linux-gnueabi-gcc: error: unrecognized command line option '-qversion'; did you mean '--version'?
 arm-poky-linux-gnueabi-gcc: fatal error: no input files
 compilation terminated.
-configure:3066: $? = 1
-configure:3086: checking whether the C compiler works
-configure:3108: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi  -O2 -pipe -g -feliminate-unused-debug-types   -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fstack-protector-strong -Wl,-z,relro,-z,now conftest.c  >&5
-configure:3112: $? = 0
-configure:3160: result: yes
-configure:3163: checking for C compiler default output file name
-configure:3165: result: a.out
-configure:3171: checking for suffix of executables
-configure:3178: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -o conftest  -O2 -pipe -g -feliminate-unused-debug-types   -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fstack-protector-strong -Wl,-z,relro,-z,now conftest.c  >&5
-configure:3182: $? = 0
-configure:3204: result: 
-configure:3226: checking whether we are cross compiling
-configure:3234: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -o conftest  -O2 -pipe -g -feliminate-unused-debug-types   -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fstack-protector-strong -Wl,-z,relro,-z,now conftest.c  >&5
-configure:3238: $? = 0
-configure:3245: ./conftest
-../configure: line 3247: ./conftest: cannot execute binary file: Exec format error
-configure:3249: $? = 126
-configure:3264: result: yes
-configure:3269: checking for suffix of object files
-configure:3291: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
-configure:3295: $? = 0
-configure:3316: result: o
-configure:3320: checking whether we are using the GNU C compiler
-configure:3339: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
-configure:3339: $? = 0
-configure:3348: result: yes
-configure:3357: checking whether arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi accepts -g
-configure:3377: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c -g  conftest.c >&5
-configure:3377: $? = 0
-configure:3418: result: yes
-configure:3435: checking for arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi option to accept ISO C89
-configure:3498: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi  -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
-configure:3498: $? = 0
-configure:3511: result: none needed
-configure:3536: checking whether arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi understands -c and -o together
-configure:3558: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c conftest.c -o conftest2.o
-configure:3561: $? = 0
-configure:3558: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c conftest.c -o conftest2.o
-configure:3561: $? = 0
-configure:3573: result: yes
-configure:3601: checking for style of include used by make
-configure:3629: result: GNU
-configure:3655: checking dependency style of arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi
-configure:3766: result: gcc3
-configure:3787: checking for arm-poky-linux-gnueabi-ar
-configure:3814: result: arm-poky-linux-gnueabi-ar
-configure:3884: checking the archiver (arm-poky-linux-gnueabi-ar) interface
-configure:3900: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
-configure:3900: $? = 0
-configure:3902: arm-poky-linux-gnueabi-ar cru libconftest.a conftest.o >&5
+configure:2966: $? = 1
+configure:2986: checking whether the C compiler works
+configure:3008: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi  -O2 -pipe -g -feliminate-unused-debug-types   -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fstack-protector-strong -Wl,-z,relro,-z,now conftest.c  >&5
+configure:3012: $? = 0
+configure:3060: result: yes
+configure:3063: checking for C compiler default output file name
+configure:3065: result: a.out
+configure:3071: checking for suffix of executables
+configure:3078: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -o conftest  -O2 -pipe -g -feliminate-unused-debug-types   -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fstack-protector-strong -Wl,-z,relro,-z,now conftest.c  >&5
+configure:3082: $? = 0
+configure:3104: result: 
+configure:3126: checking whether we are cross compiling
+configure:3134: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -o conftest  -O2 -pipe -g -feliminate-unused-debug-types   -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fstack-protector-strong -Wl,-z,relro,-z,now conftest.c  >&5
+configure:3138: $? = 0
+configure:3145: ./conftest
+../configure: line 3147: ./conftest: cannot execute binary file: Exec format error
+configure:3149: $? = 126
+configure:3164: result: yes
+configure:3169: checking for suffix of object files
+configure:3191: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
+configure:3195: $? = 0
+configure:3216: result: o
+configure:3220: checking whether we are using the GNU C compiler
+configure:3239: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
+configure:3239: $? = 0
+configure:3248: result: yes
+configure:3257: checking whether arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi accepts -g
+configure:3277: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c -g  conftest.c >&5
+configure:3277: $? = 0
+configure:3318: result: yes
+configure:3335: checking for arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi option to accept ISO C89
+configure:3398: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi  -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
+configure:3398: $? = 0
+configure:3411: result: none needed
+configure:3436: checking whether arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi understands -c and -o together
+configure:3458: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c conftest.c -o conftest2.o
+configure:3461: $? = 0
+configure:3458: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c conftest.c -o conftest2.o
+configure:3461: $? = 0
+configure:3473: result: yes
+configure:3493: checking whether make supports the include directive
+configure:3508: make -f confmf.GNU && cat confinc.out
+this is the am__doit target
+configure:3511: $? = 0
+configure:3530: result: yes (GNU style)
+configure:3555: checking dependency style of arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi
+configure:3666: result: gcc3
+configure:3687: checking for arm-poky-linux-gnueabi-ar
+configure:3714: result: arm-poky-linux-gnueabi-ar
+configure:3784: checking the archiver (arm-poky-linux-gnueabi-ar) interface
+configure:3800: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
+configure:3800: $? = 0
+configure:3802: arm-poky-linux-gnueabi-ar cru libconftest.a conftest.o >&5
 arm-poky-linux-gnueabi-ar: `u' modifier ignored since `D' is the default (see `U')
-configure:3905: $? = 0
-configure:3933: result: ar
-configure:3982: checking build system type
-configure:3996: result: x86_64-pc-linux-gnu
-configure:4016: checking host system type
-configure:4029: result: arm-poky-linux-gnueabi
-configure:4070: checking how to print strings
-configure:4097: result: printf
-configure:4118: checking for a sed that does not truncate output
-configure:4182: result: sed
-configure:4200: checking for grep that handles long lines and -e
-configure:4258: result: /bin/grep
-configure:4263: checking for egrep
-configure:4325: result: /bin/grep -E
-configure:4330: checking for fgrep
-configure:4392: result: /bin/grep -F
-configure:4427: checking for ld used by arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi
-configure:4494: result: arm-poky-linux-gnueabi-ld  --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi
-configure:4501: checking if the linker (arm-poky-linux-gnueabi-ld  --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi) is GNU ld
-configure:4516: result: yes
-configure:4528: checking for BSD- or MS-compatible name lister (nm)
-configure:4582: result: arm-poky-linux-gnueabi-nm
-configure:4712: checking the name lister (arm-poky-linux-gnueabi-nm) interface
-configure:4719: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
-configure:4722: arm-poky-linux-gnueabi-nm "conftest.o"
-configure:4725: output
+configure:3805: $? = 0
+configure:3833: result: ar
+configure:3882: checking build system type
+configure:3896: result: x86_64-pc-linux-gnu
+configure:3916: checking host system type
+configure:3929: result: arm-poky-linux-gnueabi
+configure:3970: checking how to print strings
+configure:3997: result: printf
+configure:4018: checking for a sed that does not truncate output
+configure:4082: result: sed
+configure:4100: checking for grep that handles long lines and -e
+configure:4158: result: /bin/grep
+configure:4163: checking for egrep
+configure:4225: result: /bin/grep -E
+configure:4230: checking for fgrep
+configure:4292: result: /bin/grep -F
+configure:4327: checking for ld used by arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi
+configure:4394: result: arm-poky-linux-gnueabi-ld  --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi
+configure:4401: checking if the linker (arm-poky-linux-gnueabi-ld  --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi) is GNU ld
+configure:4416: result: yes
+configure:4428: checking for BSD- or MS-compatible name lister (nm)
+configure:4482: result: arm-poky-linux-gnueabi-nm
+configure:4612: checking the name lister (arm-poky-linux-gnueabi-nm) interface
+configure:4619: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
+configure:4622: arm-poky-linux-gnueabi-nm "conftest.o"
+configure:4625: output
 00000000 B some_variable
-configure:4732: result: BSD nm
-configure:4735: checking whether ln -s works
-configure:4739: result: yes
-configure:4747: checking the maximum length of command line arguments
-configure:4878: result: 1572864
-configure:4926: checking how to convert x86_64-pc-linux-gnu file names to arm-poky-linux-gnueabi format
-configure:4966: result: func_convert_file_noop
-configure:4973: checking how to convert x86_64-pc-linux-gnu file names to toolchain format
-configure:4993: result: func_convert_file_noop
-configure:5000: checking for arm-poky-linux-gnueabi-ld  --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi option to reload object files
-configure:5007: result: -r
-configure:5041: checking for arm-poky-linux-gnueabi-objdump
-configure:5068: result: arm-poky-linux-gnueabi-objdump
-configure:5140: checking how to recognize dependent libraries
-configure:5340: result: pass_all
-configure:5385: checking for arm-poky-linux-gnueabi-dlltool
-configure:5415: result: no
-configure:5425: checking for dlltool
-configure:5455: result: no
-configure:5485: checking how to associate runtime and link libraries
-configure:5512: result: printf %s\n
-configure:5528: checking for arm-poky-linux-gnueabi-ar
-configure:5555: result: arm-poky-linux-gnueabi-ar
-configure:5636: checking for archiver @FILE support
-configure:5653: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
-configure:5653: $? = 0
-configure:5656: arm-poky-linux-gnueabi-ar cru libconftest.a @conftest.lst >&5
+configure:4632: result: BSD nm
+configure:4635: checking whether ln -s works
+configure:4639: result: yes
+configure:4647: checking the maximum length of command line arguments
+configure:4778: result: 1572864
+configure:4826: checking how to convert x86_64-pc-linux-gnu file names to arm-poky-linux-gnueabi format
+configure:4866: result: func_convert_file_noop
+configure:4873: checking how to convert x86_64-pc-linux-gnu file names to toolchain format
+configure:4893: result: func_convert_file_noop
+configure:4900: checking for arm-poky-linux-gnueabi-ld  --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi option to reload object files
+configure:4907: result: -r
+configure:4941: checking for arm-poky-linux-gnueabi-objdump
+configure:4968: result: arm-poky-linux-gnueabi-objdump
+configure:5040: checking how to recognize dependent libraries
+configure:5240: result: pass_all
+configure:5285: checking for arm-poky-linux-gnueabi-dlltool
+configure:5315: result: no
+configure:5325: checking for dlltool
+configure:5355: result: no
+configure:5385: checking how to associate runtime and link libraries
+configure:5412: result: printf %s\n
+configure:5428: checking for arm-poky-linux-gnueabi-ar
+configure:5455: result: arm-poky-linux-gnueabi-ar
+configure:5536: checking for archiver @FILE support
+configure:5553: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
+configure:5553: $? = 0
+configure:5556: arm-poky-linux-gnueabi-ar cru libconftest.a @conftest.lst >&5
 arm-poky-linux-gnueabi-ar: `u' modifier ignored since `D' is the default (see `U')
-configure:5659: $? = 0
-configure:5664: arm-poky-linux-gnueabi-ar cru libconftest.a @conftest.lst >&5
+configure:5559: $? = 0
+configure:5564: arm-poky-linux-gnueabi-ar cru libconftest.a @conftest.lst >&5
 arm-poky-linux-gnueabi-ar: `u' modifier ignored since `D' is the default (see `U')
 arm-poky-linux-gnueabi-ar: conftest.o: No such file or directory
-configure:5667: $? = 1
-configure:5679: result: @
-configure:5697: checking for arm-poky-linux-gnueabi-strip
-configure:5724: result: arm-poky-linux-gnueabi-strip
-configure:5796: checking for arm-poky-linux-gnueabi-ranlib
-configure:5823: result: arm-poky-linux-gnueabi-ranlib
-configure:5965: checking command to parse arm-poky-linux-gnueabi-nm output from arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi object
-configure:6118: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
-configure:6121: $? = 0
-configure:6125: arm-poky-linux-gnueabi-nm conftest.o \| sed -n -e 's/^.*[ ]\([ABCDGIRSTW][ABCDGIRSTW]*\)[ ][ ]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p' | sed '/ __gnu_lto/d' \> conftest.nm
-configure:6128: $? = 0
-configure:6194: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -o conftest  -O2 -pipe -g -feliminate-unused-debug-types   -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fstack-protector-strong -Wl,-z,relro,-z,now conftest.c conftstm.o >&5
-configure:6197: $? = 0
-configure:6235: result: ok
-configure:6282: checking for sysroot
-configure:6312: result: no
-configure:6319: checking for a working dd
-configure:6357: result: /bin/dd
-configure:6361: checking how to truncate binary pipes
-configure:6376: result: /bin/dd bs=4096 count=1
-configure:6665: checking for arm-poky-linux-gnueabi-mt
-configure:6695: result: no
-configure:6705: checking for mt
-configure:6721: found /bin/mt
-configure:6732: result: mt
-configure:6744: WARNING: using cross tools not prefixed with host triplet
-configure:6755: checking if mt is a manifest tool
-configure:6761: mt '-?'
-configure:6769: result: no
-configure:7446: checking how to run the C preprocessor
-configure:7516: result: arm-poky-linux-gnueabi-gcc -E  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi
-configure:7536: arm-poky-linux-gnueabi-gcc -E  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi  conftest.c
+configure:5567: $? = 1
+configure:5579: result: @
+configure:5597: checking for arm-poky-linux-gnueabi-strip
+configure:5624: result: arm-poky-linux-gnueabi-strip
+configure:5696: checking for arm-poky-linux-gnueabi-ranlib
+configure:5723: result: arm-poky-linux-gnueabi-ranlib
+configure:5865: checking command to parse arm-poky-linux-gnueabi-nm output from arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi object
+configure:6018: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
+configure:6021: $? = 0
+configure:6025: arm-poky-linux-gnueabi-nm conftest.o \| sed -n -e 's/^.*[ ]\([ABCDGIRSTW][ABCDGIRSTW]*\)[ ][ ]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p' | sed '/ __gnu_lto/d' \> conftest.nm
+configure:6028: $? = 0
+configure:6094: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -o conftest  -O2 -pipe -g -feliminate-unused-debug-types   -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fstack-protector-strong -Wl,-z,relro,-z,now conftest.c conftstm.o >&5
+configure:6097: $? = 0
+configure:6135: result: ok
+configure:6182: checking for sysroot
+configure:6212: result: no
+configure:6219: checking for a working dd
+configure:6257: result: /bin/dd
+configure:6261: checking how to truncate binary pipes
+configure:6276: result: /bin/dd bs=4096 count=1
+configure:6565: checking for arm-poky-linux-gnueabi-mt
+configure:6595: result: no
+configure:6605: checking for mt
+configure:6621: found /bin/mt
+configure:6632: result: mt
+configure:6644: WARNING: using cross tools not prefixed with host triplet
+configure:6655: checking if mt is a manifest tool
+configure:6661: mt '-?'
+configure:6669: result: no
+configure:7346: checking how to run the C preprocessor
+configure:7416: result: arm-poky-linux-gnueabi-gcc -E  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi
+configure:7436: arm-poky-linux-gnueabi-gcc -E  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi  conftest.c
 In file included from /opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/usr/include/bits/libc-header-start.h:33,
                  from /opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/usr/include/limits.h:26,
                  from /opt/poky/3.1.2/sysroots/x86_64-pokysdk-linux/usr/lib/arm-poky-linux-gnueabi/gcc/arm-poky-linux-gnueabi/9.3.0/include-fixed/limits.h:194,
@@ -804,13 +808,13 @@ In file included from /opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linu
 /opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/usr/include/features.h:397:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
   397 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
       |    ^~~~~~~
-configure:7536: $? = 0
-configure:7550: arm-poky-linux-gnueabi-gcc -E  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi  conftest.c
+configure:7436: $? = 0
+configure:7450: arm-poky-linux-gnueabi-gcc -E  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi  conftest.c
 conftest.c:11:10: fatal error: ac_nonexistent.h: No such file or directory
    11 | #include <ac_nonexistent.h>
       |          ^~~~~~~~~~~~~~~~~~
 compilation terminated.
-configure:7550: $? = 1
+configure:7450: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "libmygpio"
@@ -823,9 +827,9 @@ configure: failed program was:
 | #define VERSION "1.0"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:7579: checking for ANSI C header files
-configure:7599: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
-configure:7599: $? = 0
+configure:7479: checking for ANSI C header files
+configure:7499: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
+configure:7499: $? = 0
 In file included from /opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/usr/include/bits/libc-header-start.h:33,
                  from /opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/usr/include/string.h:26,
                  from conftest.c:11:
@@ -838,93 +842,91 @@ In file included from /opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linu
 /opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/usr/include/features.h:397:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
   397 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
       |    ^~~~~~~
-configure:7683: result: yes
-configure:7696: checking for sys/types.h
-configure:7696: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
-configure:7696: $? = 0
-configure:7696: result: yes
-configure:7696: checking for sys/stat.h
-configure:7696: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
-configure:7696: $? = 0
-configure:7696: result: yes
-configure:7696: checking for stdlib.h
-configure:7696: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
-configure:7696: $? = 0
-configure:7696: result: yes
-configure:7696: checking for string.h
-configure:7696: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
-configure:7696: $? = 0
-configure:7696: result: yes
-configure:7696: checking for memory.h
-configure:7696: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
-configure:7696: $? = 0
-configure:7696: result: yes
-configure:7696: checking for strings.h
-configure:7696: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
-configure:7696: $? = 0
-configure:7696: result: yes
-configure:7696: checking for inttypes.h
-configure:7696: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
-configure:7696: $? = 0
-configure:7696: result: yes
-configure:7696: checking for stdint.h
-configure:7696: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
-configure:7696: $? = 0
-configure:7696: result: yes
-configure:7696: checking for unistd.h
-configure:7696: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
-configure:7696: $? = 0
-configure:7696: result: yes
-configure:7710: checking for dlfcn.h
-configure:7710: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
-configure:7710: $? = 0
-configure:7710: result: yes
-configure:7966: checking for objdir
-configure:7981: result: .libs
-configure:8245: checking if arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi supports -fno-rtti -fno-exceptions
-configure:8263: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   -fno-rtti -fno-exceptions conftest.c >&5
+configure:7583: result: yes
+configure:7596: checking for sys/types.h
+configure:7596: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
+configure:7596: $? = 0
+configure:7596: result: yes
+configure:7596: checking for sys/stat.h
+configure:7596: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
+configure:7596: $? = 0
+configure:7596: result: yes
+configure:7596: checking for stdlib.h
+configure:7596: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
+configure:7596: $? = 0
+configure:7596: result: yes
+configure:7596: checking for string.h
+configure:7596: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
+configure:7596: $? = 0
+configure:7596: result: yes
+configure:7596: checking for memory.h
+configure:7596: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
+configure:7596: $? = 0
+configure:7596: result: yes
+configure:7596: checking for strings.h
+configure:7596: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
+configure:7596: $? = 0
+configure:7596: result: yes
+configure:7596: checking for inttypes.h
+configure:7596: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
+configure:7596: $? = 0
+configure:7596: result: yes
+configure:7596: checking for stdint.h
+configure:7596: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
+configure:7596: $? = 0
+configure:7596: result: yes
+configure:7596: checking for unistd.h
+configure:7596: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
+configure:7596: $? = 0
+configure:7596: result: yes
+configure:7610: checking for dlfcn.h
+configure:7610: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
+configure:7610: $? = 0
+configure:7610: result: yes
+configure:7866: checking for objdir
+configure:7881: result: .libs
+configure:8145: checking if arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi supports -fno-rtti -fno-exceptions
+configure:8163: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   -fno-rtti -fno-exceptions conftest.c >&5
 cc1: warning: command line option '-fno-rtti' is valid for C++/D/ObjC++ but not for C
-configure:8267: $? = 0
-configure:8280: result: no
-configure:8638: checking for arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi option to produce PIC
-configure:8645: result: -fPIC -DPIC
-configure:8653: checking if arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi PIC flag -fPIC -DPIC works
-configure:8671: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   -fPIC -DPIC -DPIC conftest.c >&5
-configure:8675: $? = 0
-configure:8688: result: yes
-configure:8717: checking if arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi static flag -static works
-configure:8745: result: no
-configure:8760: checking if arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi supports -c -o file.o
-configure:8781: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   -o out/conftest2.o conftest.c >&5
-configure:8785: $? = 0
-configure:8807: result: yes
-configure:8815: checking if arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi supports -c -o file.o
-configure:8862: result: yes
-configure:8895: checking whether the arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi linker (arm-poky-linux-gnueabi-ld  --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi) supports shared libraries
-configure:10158: result: yes
-configure:10195: checking whether -lc should be explicitly linked in
-configure:10203: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
-configure:10206: $? = 0
-configure:10221: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -shared  -fPIC -DPIC conftest.o  -v -Wl,-soname -Wl,conftest -o conftest 2\>\&1 \| /bin/grep  -lc  \>/dev/null 2\>\&1
-configure:10224: $? = 0
-configure:10238: result: no
-configure:10398: checking dynamic linker characteristics
-configure:10979: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -o conftest  -O2 -pipe -g -feliminate-unused-debug-types   -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fstack-protector-strong -Wl,-z,relro,-z,now -Wl,-rpath -Wl,/foo conftest.c  >&5
-configure:10979: $? = 0
-configure:11228: result: GNU/Linux ld.so
-configure:11350: checking how to hardcode library paths into programs
-configure:11375: result: immediate
-configure:11923: checking whether stripping libraries is possible
-configure:11928: result: yes
-configure:11963: checking if libtool supports shared libraries
-configure:11965: result: yes
-configure:11968: checking whether to build shared libraries
-configure:11993: result: yes
-configure:11996: checking whether to build static libraries
-configure:12000: result: yes
-configure:12150: checking that generated files are newer than configure
-configure:12156: result: done
-configure:12179: creating ./config.status
+configure:8167: $? = 0
+configure:8180: result: no
+configure:8538: checking for arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi option to produce PIC
+configure:8545: result: -fPIC -DPIC
+configure:8553: checking if arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi PIC flag -fPIC -DPIC works
+configure:8571: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   -fPIC -DPIC -DPIC conftest.c >&5
+configure:8575: $? = 0
+configure:8588: result: yes
+configure:8617: checking if arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi static flag -static works
+configure:8645: result: no
+configure:8660: checking if arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi supports -c -o file.o
+configure:8681: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   -o out/conftest2.o conftest.c >&5
+configure:8685: $? = 0
+configure:8707: result: yes
+configure:8715: checking if arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi supports -c -o file.o
+configure:8762: result: yes
+configure:8795: checking whether the arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi linker (arm-poky-linux-gnueabi-ld  --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi) supports shared libraries
+configure:10058: result: yes
+configure:10095: checking whether -lc should be explicitly linked in
+configure:10103: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -c  -O2 -pipe -g -feliminate-unused-debug-types   conftest.c >&5
+configure:10106: $? = 0
+configure:10121: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -shared  -fPIC -DPIC conftest.o  -v -Wl,-soname -Wl,conftest -o conftest 2\>\&1 \| /bin/grep  -lc  \>/dev/null 2\>\&1
+configure:10124: $? = 0
+configure:10138: result: no
+configure:10298: checking dynamic linker characteristics
+configure:10879: arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi -o conftest  -O2 -pipe -g -feliminate-unused-debug-types   -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -fstack-protector-strong -Wl,-z,relro,-z,now -Wl,-rpath -Wl,/foo conftest.c  >&5
+configure:10879: $? = 0
+configure:11128: result: GNU/Linux ld.so
+configure:11250: checking how to hardcode library paths into programs
+configure:11275: result: immediate
+configure:11823: checking whether stripping libraries is possible
+configure:11828: result: yes
+configure:11863: checking if libtool supports shared libraries
+configure:11865: result: yes
+configure:11868: checking whether to build shared libraries
+configure:11893: result: yes
+configure:11896: checking whether to build static libraries
+configure:11900: result: yes
+configure:12071: creating ./config.status
 
 ## ---------------------- ##
 ## Running config.status. ##
@@ -941,12 +943,19 @@ generated by GNU Autoconf 2.69.  Invocation command line was
 
 on heutlett-HP-Pavilion-Gaming-Laptop-15-cx0xxx
 
-config.status:1088: creating Makefile
-config.status:1088: creating lib/Makefile
-config.status:1088: creating src/Makefile
-config.status:1088: creating config.h
-config.status:1302: executing depfiles commands
-config.status:1302: executing libtool commands
+config.status:1055: creating Makefile
+config.status:1055: creating lib/Makefile
+config.status:1055: creating src/Makefile
+config.status:1055: creating config.h
+config.status:1221: config.h is unchanged
+config.status:1269: executing depfiles commands
+config.status:1346: cd lib       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
+config.status:1351: $? = 0
+config.status:1346: cd src       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
+config.status:1351: $? = 0
+config.status:1269: executing libtool commands
 
 ## ---------------- ##
 ## Cache variables. ##
@@ -1412,7 +1421,7 @@ xorg_cv_malloc0_returns_null=yes
 ## Output variables. ##
 ## ----------------- ##
 
-ACLOCAL='${SHELL} /home/heutlett/libmygpio/build-aux/missing aclocal-1.15'
+ACLOCAL='${SHELL} /home/heutlett/2023_EMBEBIDOS_PROYECTO3/libmygpio/build-aux/missing aclocal-1.16'
 AMDEPBACKSLASH='\'
 AMDEP_FALSE='#'
 AMDEP_TRUE=''
@@ -1422,9 +1431,9 @@ AM_DEFAULT_V='$(AM_DEFAULT_VERBOSITY)'
 AM_DEFAULT_VERBOSITY='1'
 AM_V='$(V)'
 AR='arm-poky-linux-gnueabi-ar'
-AUTOCONF='${SHELL} /home/heutlett/libmygpio/build-aux/missing autoconf'
-AUTOHEADER='${SHELL} /home/heutlett/libmygpio/build-aux/missing autoheader'
-AUTOMAKE='${SHELL} /home/heutlett/libmygpio/build-aux/missing automake-1.15'
+AUTOCONF='${SHELL} /home/heutlett/2023_EMBEBIDOS_PROYECTO3/libmygpio/build-aux/missing autoconf'
+AUTOHEADER='${SHELL} /home/heutlett/2023_EMBEBIDOS_PROYECTO3/libmygpio/build-aux/missing autoheader'
+AUTOMAKE='${SHELL} /home/heutlett/2023_EMBEBIDOS_PROYECTO3/libmygpio/build-aux/missing automake-1.16'
 AWK='gawk'
 CC='arm-poky-linux-gnueabi-gcc  -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/opt/poky/3.1.2/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi'
 CCDEPMODE='depmode=gcc3'
@@ -1457,7 +1466,7 @@ LIPO=''
 LN_S='ln -s'
 LTLIBOBJS=''
 LT_SYS_LIBRARY_PATH=''
-MAKEINFO='${SHELL} /home/heutlett/libmygpio/build-aux/missing makeinfo'
+MAKEINFO='${SHELL} /home/heutlett/2023_EMBEBIDOS_PROYECTO3/libmygpio/build-aux/missing makeinfo'
 MANIFEST_TOOL=':'
 MKDIR_P='/bin/mkdir -p'
 NM='arm-poky-linux-gnueabi-nm'
@@ -1513,7 +1522,7 @@ host_vendor='poky'
 htmldir='${docdir}'
 includedir='${prefix}/include'
 infodir='${datarootdir}/info'
-install_sh='${SHELL} /home/heutlett/libmygpio/build-aux/install-sh'
+install_sh='${SHELL} /home/heutlett/2023_EMBEBIDOS_PROYECTO3/libmygpio/build-aux/install-sh'
 libdir='${exec_prefix}/lib'
 libexecdir='${exec_prefix}/libexec'
 localedir='${datarootdir}/locale'
@@ -1525,7 +1534,6 @@ pdfdir='${docdir}'
 prefix='/home/heutlett/libmygpio/usr'
 program_transform_name='s,x,x,'
 psdir='${docdir}'
-runstatedir='${localstatedir}/run'
 sbindir='${exec_prefix}/sbin'
 sharedstatedir='${prefix}/com'
 sysconfdir='${prefix}/etc'
@@ -1558,3 +1566,21 @@ target_alias=''
 #define LT_OBJDIR ".libs/"
 
 configure: exit 0
+
+## ---------------------- ##
+## Running config.status. ##
+## ---------------------- ##
+
+This file was extended by libmygpio config.status 1.0, which was
+generated by GNU Autoconf 2.69.  Invocation command line was
+
+  CONFIG_FILES    = 
+  CONFIG_HEADERS  = 
+  CONFIG_LINKS    = 
+  CONFIG_COMMANDS = 
+  $ ./config.status config.h
+
+on heutlett-HP-Pavilion-Gaming-Laptop-15-cx0xxx
+
+config.status:1055: creating config.h
+config.status:1221: config.h is unchanged
