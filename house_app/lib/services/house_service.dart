@@ -28,12 +28,18 @@ Future<http.Response> takePhoto() async {
   return response;
 }
 
-Future<http.Response> applyPhotoFilter() async {
+Future<http.Response> applyPhotoFilter(String filter, int useOmp) async {
   var url = "http://192.168.0.102:5001/home/apply_filter";
+
+  final Map<String, dynamic> data = {"filter": filter, "omp": useOmp};
 
   var headers = {"Content-Type": "application/json"};
 
-  var response = await http.get(Uri.parse(url), headers: headers);
+  var response = await http.post(
+    Uri.parse(url),
+    headers: headers,
+    body: json.encode(data),
+  );
 
   return response;
 }

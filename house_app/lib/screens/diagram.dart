@@ -42,12 +42,6 @@ class _DiagramScreenState extends State<DiagramScreen> {
               jsonDecode(response.body)['data']['state'];
         });
       }).catchError((error) {});
-
-      getSelectedFilter('omp').then((response) {
-        setState(() {
-          widget.useOmp = jsonDecode(response.body)['data']['state'];
-        });
-      }).catchError((error) {});
     });
   }
 
@@ -174,42 +168,6 @@ class _DiagramScreenState extends State<DiagramScreen> {
                 ),
               ],
             ),
-            const SizedBox(height: 25),
-            Row(
-              children: [
-                const SizedBox(width: 20),
-                const Text(
-                  'Optimization:',
-                  style: TextStyle(color: Colors.white, fontSize: 35),
-                ),
-                const SizedBox(width: 70),
-                Container(
-                  color: Colors.grey,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        const Text('OpenMP',
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 25)),
-                        const SizedBox(width: 25),
-                        widget.useOmp == 0
-                            ? const Icon(
-                                Icons.disabled_by_default_rounded,
-                                color: Colors.red,
-                                size: 45,
-                              )
-                            : Icon(
-                                Icons.check_box,
-                                color: Colors.green.shade900,
-                                size: 45,
-                              )
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
           ],
         ),
       ),
@@ -234,7 +192,24 @@ class _DiagramScreenState extends State<DiagramScreen> {
       throw Exception('No se pudo cargar la imagen');
     }
 
-    response = await applyPhotoFilter();
+    String selectedFilter = '';
+
+    if (widget.selectedFilters[0] == 1) {
+      selectedFilter = 'filter1';
+    } else if (widget.selectedFilters[1] == 1) {
+      selectedFilter = 'filter2';
+    } else if (widget.selectedFilters[2] == 1) {
+      selectedFilter = 'filter3';
+    }
+
+    response = await applyPhotoFilter(selectedFilter, widget.useOmp);
+
+    setState(() {
+      widget.timeElapsedNoOmp =
+          jsonDecode(response.body)['data']['time_elapsed_no_omp'];
+      widget.timeElapsedOmp =
+          jsonDecode(response.body)['data']['time_elapsed_omp'];
+    });
 
     response = await getFilteredImage();
     if (response.statusCode == 200) {
