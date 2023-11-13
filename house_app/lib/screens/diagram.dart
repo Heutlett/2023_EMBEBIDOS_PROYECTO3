@@ -1,14 +1,50 @@
+import 'dart:async';
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:house_app/services/house_service.dart';
 
 class DiagramScreen extends StatefulWidget {
-  const DiagramScreen({super.key});
+  DiagramScreen({super.key});
+  List<int> selectedFilters = [0, 0, 0];
+  int useOmp = 0;
+  double timeElapsedNoOmp = 0;
+  double timeElapsedOmp = 0;
 
   @override
   State<DiagramScreen> createState() => _DiagramScreenState();
 }
 
 class _DiagramScreenState extends State<DiagramScreen> {
+  @override
+  void initState() {
+    super.initState();
+
+    // Utiliza un Timer.periodic para obtener el estado del LED cada 2 segundos.
+    Timer.periodic(const Duration(seconds: 2), (timer) {
+      getSelectedFilter('filter1').then((response) {
+        setState(() {
+          widget.selectedFilters[0] =
+              jsonDecode(response.body)['data']['state'];
+        });
+      }).catchError((error) {});
+
+      getSelectedFilter('filter2').then((response) {
+        setState(() {
+          widget.selectedFilters[1] =
+              jsonDecode(response.body)['data']['state'];
+        });
+      }).catchError((error) {});
+
+      getSelectedFilter('filter3').then((response) {
+        setState(() {
+          widget.selectedFilters[2] =
+              jsonDecode(response.body)['data']['state'];
+        });
+      }).catchError((error) {});
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +58,7 @@ class _DiagramScreenState extends State<DiagramScreen> {
               'Raspberry Pi 2 - Photo Filter System with Yocto',
               style: TextStyle(fontSize: 45, color: Colors.white),
             ),
-            const SizedBox(height: 250),
+            const SizedBox(height: 200),
             GestureDetector(
               onTap: () {
                 _takePhoto();
@@ -47,6 +83,91 @@ class _DiagramScreenState extends State<DiagramScreen> {
                 ),
               ),
             ),
+            const SizedBox(height: 100),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                const Text(
+                  'Filter selected:',
+                  style: TextStyle(color: Colors.white, fontSize: 35),
+                ),
+                Container(
+                  color: Colors.grey,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        const Text('GreyScale Filter',
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 25)),
+                        const SizedBox(width: 25),
+                        widget.selectedFilters[0] == 0
+                            ? const Icon(
+                                Icons.disabled_by_default_rounded,
+                                color: Colors.red,
+                                size: 45,
+                              )
+                            : Icon(
+                                Icons.check_box,
+                                color: Colors.green.shade900,
+                                size: 45,
+                              )
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  color: Colors.grey,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        const Text('Sobel Filter',
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 25)),
+                        const SizedBox(width: 25),
+                        widget.selectedFilters[1] == 0
+                            ? const Icon(
+                                Icons.disabled_by_default_rounded,
+                                color: Colors.red,
+                                size: 45,
+                              )
+                            : Icon(
+                                Icons.check_box,
+                                color: Colors.green.shade900,
+                                size: 45,
+                              )
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  color: Colors.grey,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        const Text('Laplacian Filter',
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 25)),
+                        const SizedBox(width: 25),
+                        widget.selectedFilters[2] == 0
+                            ? const Icon(
+                                Icons.disabled_by_default_rounded,
+                                color: Colors.red,
+                                size: 45,
+                              )
+                            : Icon(
+                                Icons.check_box,
+                                color: Colors.green.shade900,
+                                size: 45,
+                              )
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
@@ -61,18 +182,43 @@ class _DiagramScreenState extends State<DiagramScreen> {
 
     if (response.statusCode == 200) {
       final bytes = response.bodyBytes;
-      originalImage = Image.memory(bytes);
+      originalImage = Image.memory(
+        bytes,
+        width: 400,
+        height: 250,
+      );
       // Ahora puedes mostrar la imagen en tu aplicación Flutter
     } else {
       throw Exception('No se pudo cargar la imagen');
     }
 
-    response = await applyPhotoFilter();
+    String selectedFilter = '';
+
+    if (widget.selectedFilters[0] == 1) {
+      selectedFilter = 'filter1';
+    } else if (widget.selectedFilters[1] == 1) {
+      selectedFilter = 'filter2';
+    } else if (widget.selectedFilters[2] == 1) {
+      selectedFilter = 'filter3';
+    }
+
+    response = await applyPhotoFilter(selectedFilter, widget.useOmp);
+
+    setState(() {
+      widget.timeElapsedNoOmp =
+          jsonDecode(response.body)['data']['time_elapsed_no_omp'];
+      widget.timeElapsedOmp =
+          jsonDecode(response.body)['data']['time_elapsed_omp'];
+    });
 
     response = await getFilteredImage();
     if (response.statusCode == 200) {
       final bytes = response.bodyBytes;
-      filteredImage = Image.memory(bytes);
+      filteredImage = Image.memory(
+        bytes,
+        width: 400,
+        height: 250,
+      );
       // Ahora puedes mostrar la imagen en tu aplicación Flutter
     } else {
       throw Exception('No se pudo cargar la imagen');
@@ -95,7 +241,6 @@ class _DiagramScreenState extends State<DiagramScreen> {
           child: StatefulBuilder(
             builder: (BuildContext context, StateSetter setState) {
               return Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Row(
@@ -105,7 +250,7 @@ class _DiagramScreenState extends State<DiagramScreen> {
                         children: [
                           const Text(
                             "Original photo:",
-                            style: TextStyle(fontSize: 24),
+                            style: TextStyle(fontSize: 34),
                           ),
                           const SizedBox(height: 25),
                           originalImage,
@@ -116,7 +261,7 @@ class _DiagramScreenState extends State<DiagramScreen> {
                         children: [
                           const Text(
                             "Filtered image:",
-                            style: TextStyle(fontSize: 24),
+                            style: TextStyle(fontSize: 34),
                           ),
                           const SizedBox(height: 25),
                           filteredImage,
@@ -124,7 +269,27 @@ class _DiagramScreenState extends State<DiagramScreen> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 55),
+                  const SizedBox(height: 15),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                              'Time elapsed no OMP: ${widget.timeElapsedNoOmp}ms',
+                              style: const TextStyle(fontSize: 24)),
+                          Text(
+                              'Time elapsed with OMP: ${widget.timeElapsedOmp}ms',
+                              style: const TextStyle(fontSize: 24)),
+                          Text(
+                              'Enhanced time with OMP: ${widget.timeElapsedNoOmp - widget.timeElapsedOmp}ms',
+                              style: const TextStyle(fontSize: 24)),
+                        ],
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 15),
                   SizedBox(
                     width: 100,
                     height: 50,
@@ -143,56 +308,6 @@ class _DiagramScreenState extends State<DiagramScreen> {
           ),
         );
       },
-    );
-  }
-}
-
-class Puerta extends StatefulWidget {
-  final String name;
-  final int angle;
-  const Puerta({
-    super.key,
-    required this.name,
-    required this.angle,
-  });
-
-  @override
-  State<Puerta> createState() => _PuertaState();
-}
-
-class _PuertaState extends State<Puerta> {
-  int isOpen = 0;
-
-  @override
-  void initState() {
-    super.initState();
-
-    // // Utiliza un Timer.periodic para obtener el estado del LED cada 2 segundos.
-    // Timer.periodic(const Duration(seconds: 2), (timer) {
-    //   getDoorState(widget.name).then((response) {
-    //     setState(() {
-    //       isOpen = jsonDecode(response.body)['data']['state'];
-    //     });
-    //   }).catchError((error) {});
-    // });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Transform.rotate(
-          angle: widget.angle *
-              3.14159265359 /
-              180, // Ángulo de rotación en radianes (45 grados)
-          child: Icon(
-            isOpen == 0 ? Icons.door_back_door_outlined : Icons.door_back_door,
-            size: 55,
-            color: isOpen == 1 ? Colors.green : Colors.red,
-          ),
-        )
-      ],
     );
   }
 }

@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
       title: 'Material App',
       initialRoute: "/diagram",
       routes: {
-        "/diagram": (BuildContext context) => const DiagramScreen(),
+        "/diagram": (BuildContext context) => DiagramScreen(),
       },
     );
   }
