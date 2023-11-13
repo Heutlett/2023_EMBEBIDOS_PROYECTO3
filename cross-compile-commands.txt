@@ -9,7 +9,7 @@
 
 -Cargar variables de entorno del sistema en la raiz del directorio de la biblioteca:
 	
-	source /opt/poky/3.1.2/environment-setup-cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi 
+	 . /opt/poky/3.1.2/environment-setup-cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi
 
 -Comprobar que se cargaron las variables de entorno:
 
@@ -29,16 +29,10 @@
 	../configure --prefix=/home/heutlett/libmygpio/usr/ --host=arm-poky-linux-gnueabi
 
 -Ahora ejecutar el makefile:
-	
--Usar paralelismo:
+	(nota: a veces es necesario ejecutar make clean previo al make)
+	(nota: a veces es necesario editar el .bb de la receta para agregar dependencias, por ejemplo: DEPENDS = "gstreamer1.0")	
 
-	-Ver cores:
-
-		-cat /proc/cpuinfo | grep cores
-
-	- Ejecutar make con n procesadores:
-
-		make -j<n>
+	-make
 
 -Ejecutar "make install" en build
 

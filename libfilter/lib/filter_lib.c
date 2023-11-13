@@ -10,7 +10,7 @@
 #include <omp.h>
 #include <math.h>
 #include <sys/time.h>
-//#include <gst/gst.h>
+#include <gst/gst.h>
 
 // Filtro sobel
 void apply_filter_1(uint8_t *image_data, int width, int height) {
@@ -172,52 +172,76 @@ void apply_filter_3_omp(uint8_t *image_data, int width, int height) {
 }
 
 void take_photo_gst(char *output_path){
-    // gst_init(NULL, NULL);
+    // Inicializar GStreamer
+    gst_init(NULL, NULL);
 
-    // GstElement *pipeline, *source, *parse, *decode, *convert, *encode, *sink;
+    // Crear el pipeline
+    GstElement *pipeline = gst_pipeline_new("pipeline");
 
-    // // Crear los elementos
-    // pipeline = gst_pipeline_new("take-photo-pipeline");
-    // source = gst_element_factory_make("v4l2src", "source");
-    // parse = gst_element_factory_make("jpegparse", "parse");
-    // decode = gst_element_factory_make("jpegdec", "decode");
-    // convert = gst_element_factory_make("videoconvert", "convert");
-    // encode = gst_element_factory_make("pngenc", "encode");
-    // sink = gst_element_factory_make("filesink", "sink");
+    // Crear los elementos
+    GstElement *v4l2src = gst_element_factory_make("v4l2src", "v4l2-source");
+    GstElement *videoconvert = gst_element_factory_make("videoconvert", "video-convert");
+    GstElement *jpegenc = gst_element_factory_make("jpegenc", "jpeg-encoder");
+    GstElement *filesink = gst_element_factory_make("filesink", "file-sink");
 
-    // if (!pipeline || !source || !parse || !decode || !convert || !encode || !sink) {
-    //     g_error("Failed to create elements. Exiting.\n");
-    // }
+    // Verificar que todos los elementos se hayan creado correctamente
+    if (!pipeline || !v4l2src || !videoconvert || !jpegenc || !filesink) {
+        g_error("Error al crear elementos.");
+    }
 
-    // // Establecer las propiedades de los elementos
-    // g_object_set(G_OBJECT(source), "device", "/dev/video0", NULL);
-    // g_object_set(G_OBJECT(encode), "snapshot", TRUE, NULL);
-    // g_object_set(G_OBJECT(sink), "location", output_path, NULL);
+    // Configurar la fuente de video
+    g_object_set(v4l2src, "device", "/dev/video0", NULL);
 
-    // // Agregar elementos al pipeline
-    // gst_bin_add_many(GST_BIN(pipeline), source, parse, decode, convert, encode, sink, NULL);
+    // Configurar el destino del archivo
+    g_object_set(filesink, "location", output_path, NULL);
 
-    // // Enlazar los elementos
-    // if (!gst_element_link_many(source, parse, decode, convert, encode, sink, NULL)) {
-    //     g_error("Failed to link elements. Exiting.\n");
-    // }
+    // Agregar los elementos al pipeline
+    gst_bin_add_many(GST_BIN(pipeline), v4l2src, videoconvert, jpegenc, filesink, NULL);
 
-    // // Iniciar el pipeline
-    // GstStateChangeReturn ret = gst_element_set_state(pipeline, GST_STATE_PLAYING);
-    // if (ret == GST_STATE_CHANGE_FAILURE) {
-    //     g_error("Failed to start pipeline. Exiting.\n");
-    // }
+    // Crear los enlaces entre los elementos
+    if (!gst_element_link_many(v4l2src, videoconvert, jpegenc, filesink, NULL)) {
+        g_error("Error al crear enlaces entre los elementos.");
+        gst_object_unref(pipeline);
+    }
 
-    // // Esperar a que termine la captura
-    // GstBus *bus = gst_element_get_bus(pipeline);
-    // GstMessage *msg = gst_bus_timed_pop_filtered(bus, GST_CLOCK_TIME_NONE, GST_MESSAGE_ERROR | GST_MESSAGE_EOS);
+    // Iniciar el pipeline
+    GstStateChangeReturn ret = gst_element_set_state(pipeline, GST_STATE_PLAYING);
+    if (ret == GST_STATE_CHANGE_FAILURE) {
+        g_error("Error al iniciar el pipeline.");
+        gst_object_unref(pipeline);
+    }
 
-    // // Limpiar
-    // gst_message_unref(msg);
-    // gst_object_unref(bus);
-    // gst_element_set_state(pipeline, GST_STATE_NULL);
-    // gst_object_unref(pipeline);
+    // Esperar a que el pipeline termine
+    GstBus *bus = gst_element_get_bus(pipeline);
+    GstMessage *msg = gst_bus_timed_pop_filtered(bus, GST_CLOCK_TIME_NONE, GST_MESSAGE_ERROR | GST_MESSAGE_EOS);
 
+    // Manejar los mensajes
+    if (msg != NULL) {
+        GError *err;
+        gchar *debug_info;
+
+        switch (GST_MESSAGE_TYPE(msg)) {
+            case GST_MESSAGE_ERROR:
+                gst_message_parse_error(msg, &err, &debug_info);
+                g_error("Error recibido del elemento %s: %s", GST_OBJECT_NAME(msg->src), err->message);
+                g_error("Información de depuración: %s", debug_info);
+                g_clear_error(&err);
+                g_free(debug_info);
+                break;
+            case GST_MESSAGE_EOS:
+                g_message("Fin del stream.");
+                break;
+            default:
+                // Otros mensajes
+                break;
+        }
+
+        gst_message_unref(msg);
+    }
+
+    // Detener y liberar recursos
+    gst_element_set_state(pipeline, GST_STATE_NULL);
+    gst_object_unref(pipeline);
 }
 
 float apply_filter(char *input_path, char *output_path, int filter, int use_omp){

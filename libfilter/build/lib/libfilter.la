@@ -17,7 +17,7 @@ old_library='libfilter.a'
 inherited_linker_flags=''
 
 # Libraries that this one depends upon.
-dependency_libs=''
+dependency_libs=' -lgstreamer-1.0 -lgobject-2.0 -lglib-2.0'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''
@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/home/heutlett/2023_EMBEBIDOS_PROYECTO3/libfilter/build/usr/lib'
+libdir='/home/heutlett/libmygpio/usr/lib'

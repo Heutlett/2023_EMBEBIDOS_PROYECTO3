@@ -11938,8 +11938,11 @@ ac_config_headers="$ac_config_headers config.h"
 
 ac_config_files="$ac_config_files Makefile lib/Makefile src/Makefile"
 
-
-AM_CFLAGS="-fopenmp $AM_CFLAGS"
+#PKG_CHECK_MODULES([GSTREAMER], [gstreamer-1.0])
+#AC_SUBST(GSTREAMER_CFLAGS)
+#AC_SUBST(GSTREAMER_LIBS)
+#AC_MSG_NOTICE([GStreamer CFLAGS: $GSTREAMER_CFLAGS])
+#AC_MSG_NOTICE([GStreamer LIBS: $GSTREAMER_LIBS])
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
 # tests run on this system so they can be shared between configure

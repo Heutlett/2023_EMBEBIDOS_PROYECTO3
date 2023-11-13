@@ -1,7 +1,19 @@
 #include <gst/gst.h>
+#include <stdio.h>
 
 int main(int argc, char *argv[]) {
-    gst_init(NULL, NULL);
+
+    if (argc != 5) {
+        fprintf(stderr, "Uso: %s <input_path> <output_path> <filter> <use_omp>\n", argv[0]);
+        return 1;
+    }
+
+    char *input_path = argv[1];
+    char *output_path = argv[2];
+    int filter = atoi(argv[3]);
+    int use_omp = atoi(argv[4]);
+
+    gst_init(&argc, &argv);
 
     GstElement *pipeline, *source, *parse, *decode, *convert, *encode, *sink;
 
@@ -22,7 +34,7 @@ int main(int argc, char *argv[]) {
     // Establecer las propiedades de los elementos
     g_object_set(G_OBJECT(source), "device", "/dev/video0", NULL);
     g_object_set(G_OBJECT(encode), "snapshot", TRUE, NULL);
-    g_object_set(G_OBJECT(sink), "location", "foto.png", NULL);
+    g_object_set(G_OBJECT(sink), "location", "foto.jpg", NULL);
 
     // Agregar elementos al pipeline
     gst_bin_add_many(GST_BIN(pipeline), source, parse, decode, convert, encode, sink, NULL);
