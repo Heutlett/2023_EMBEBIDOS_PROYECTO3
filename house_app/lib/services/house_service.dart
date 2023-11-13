@@ -2,10 +2,10 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-Future<http.Response> getDoorState(String door) async {
-  var url = "http://192.168.0.102:5001/home/get_door_state";
+Future<http.Response> getSelectedFilter(String filter) async {
+  var url = "http://192.168.0.102:5001/home/get_selected_filter";
 
-  final Map<String, String> data = {"door": door};
+  final Map<String, String> data = {"filter": filter};
 
   var headers = {"Content-Type": "application/json"};
 
