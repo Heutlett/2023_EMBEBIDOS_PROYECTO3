@@ -1,0 +1,34 @@
+Crear servicio para que se inicie el servidor sin necesidad de HDMI
+(Se puede hacer desde la consola con hdmi)
+
+- Crear archivo del servicio y configurarlo
+
+	touch /etc/systemd/system/myservice.service
+	vi /etc/systemd/system/myservice.service
+
+(Normalmente la ruta de python es usr/bin/python3)
+
+[Unit]
+Description=My Flask Service
+After=network.target
+
+[Service]
+ExecStart=/ruta/a/tu/entorno/virtual/python /ruta/a/tu/app.py
+WorkingDirectory=/ruta/a/tu/directorio/de/aplicacion
+Restart=always
+User=nombre_de_usuario
+Group=nombre_de_grupo
+
+[Install]
+WantedBy=multi-user.target
+
+-Reiniciar systemd
+
+	systemctl daemon-reload
+
+-Iniciar el servicio
+
+	systemctl start myservice
+	systemctl enable myservice
+
+
